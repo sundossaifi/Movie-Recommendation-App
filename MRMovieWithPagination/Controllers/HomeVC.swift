@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Toast
 
 class HomeVC: UIViewController {
 
@@ -23,9 +23,10 @@ class HomeVC: UIViewController {
         homePageTableView.register(CollectionViewTableViewCell.nib(), forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
         homePageTableView.dataSource = self
         homePageTableView.delegate = self
+         
+         viewModel.delegate = self
     }
 }
-
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,13 +71,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeVC: MoviesListViewModelDelegate {
-    func onFetchCompleted() {
-        DispatchQueue.main.async {
-            self.homePageTableView.reloadData()
-        }
-    }
-
     func onFetchFailed(with reason: String) {
-        print("Fetch failed: \(reason)")
+        view.makeToast(reason)
     }
 }

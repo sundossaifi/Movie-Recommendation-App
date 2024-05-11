@@ -8,7 +8,6 @@
 import Foundation
 
 protocol MoviesListViewModelDelegate: AnyObject {
-    func onFetchCompleted()
     func onFetchFailed(with reason: String)
 }
 
@@ -35,7 +34,7 @@ class HomeViewModel {
         isFetchInProgress[endpoint] = true
         let nextPage = (currentPage[endpoint] ?? 0) + 1
         
-        APICaller.fetchMovies(for: endpoint, page: nextPage) { [weak self] movieResults in
+        APICaller.shared.fetchMovies(for: endpoint, page: nextPage) { [weak self] movieResults in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.isFetchInProgress[endpoint] = false
@@ -46,7 +45,6 @@ class HomeViewModel {
                     self.movies[endpoint]?.append(contentsOf: movieResults.results)
                 }
                 self.currentPage[endpoint] = nextPage
-                self.delegate?.onFetchCompleted()
                 completion(self.movies[endpoint] ?? [])
             }
         } onFailure: { [weak self] error in

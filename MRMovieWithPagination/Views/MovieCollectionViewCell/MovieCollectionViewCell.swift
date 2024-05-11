@@ -18,5 +18,4 @@ class MovieCollectionViewCell: UICollectionViewCell {
     public func configureCollectionViewCell(with moviePoster: URL) {
         moviePosterImageView.kf.setImage(with: moviePoster)
     }
-
 }

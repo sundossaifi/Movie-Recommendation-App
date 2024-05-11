@@ -33,7 +33,6 @@ class CollectionViewTableViewCell: UITableViewCell {
     
     public func configureCell(with movies: [Movie]) {
         self.movies = movies
-        print(self.movies.count)
         DispatchQueue.main.async { [weak self] in
             self?.moviesCollectionView.reloadData()
         }
