@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-enum Endpoint: Int {
+enum MovieCategory: Int {
     case trendingMovies = 0
     case popularMovies = 1
     case upcomingMovies = 2
@@ -33,7 +33,7 @@ enum Endpoint: Int {
 }
 
 public class APICaller {
-     static func fetchMovies(for endpoint: Endpoint, page: Int, onSuccess: @escaping (MovieResults) -> Void, onFailure: @escaping (Error) -> Void) {
+     static func fetchMovies(for endpoint: MovieCategory, page: Int, onSuccess: @escaping (MovieResults) -> Void, onFailure: @escaping (Error) -> Void) {
         let urlString = endpoint.url(forPage: page)
         guard let url = URL(string: urlString) else {
             onFailure(NSError(domain: "APICaller", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"]))

@@ -39,27 +39,13 @@ class CollectionViewTableViewCell: UITableViewCell {
         }
     }
     
-    func fetchInitialMovies() {
-        guard let section = section else { return }
-        switch section {
-        case Endpoint.trendingMovies.rawValue:
-            viewModel?.fetchTrendingMovies() { trendingMovies in
-                self.configureCell(with: trendingMovies)
-            }
-        case Endpoint.popularMovies.rawValue:
-            viewModel?.fetchPopularMovies() { popularMoviews in
-                self.configureCell(with: popularMoviews)
-            }
-        case Endpoint.upcomingMovies.rawValue:
-            viewModel?.fetchUpComingMovies() { upComingMovies in
-                self.configureCell(with: upComingMovies)
-            }
-        case Endpoint.topRatedMovies.rawValue:
-            viewModel?.fetchTopRatedMovies() { topRatedMovies in
-                self.configureCell(with: topRatedMovies)
-            }
-        default:
-            break
+    func fetchMovies() {
+        guard let section = section else {
+            return
+        }
+        guard let endpoint = MovieCategory(rawValue: section) else { return }
+        viewModel?.fetchMovies(for: endpoint) { movies in
+            self.configureCell(with: movies)
         }
     }
 }
@@ -82,7 +68,7 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == movies.count - 1 {
-            self.fetchInitialMovies()
+            self.fetchMovies()
         }
     }
 }

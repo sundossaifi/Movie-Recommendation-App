@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class HomeVC: UIViewController {
 
     @IBOutlet weak var homePageTableView: UITableView!
@@ -18,17 +19,10 @@ class HomeVC: UIViewController {
         configure()
     }
     
-    func configure() {
+     private func configure() {
         homePageTableView.register(CollectionViewTableViewCell.nib(), forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
         homePageTableView.dataSource = self
         homePageTableView.delegate = self
-        
-//        viewModel.fetchPopularMovies()
-//        viewModel.fetchTrendingMovies() {_ in 
-//            
-//        }
-//        viewModel.fetchTopRatedMovies()
-//        viewModel.fetchUpComingMovies()
     }
 }
 
@@ -62,7 +56,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         }
         cell.section = indexPath.section
         cell.viewModel = self.viewModel
-        cell.fetchInitialMovies()
+        cell.fetchMovies()
         return cell
     }
     
