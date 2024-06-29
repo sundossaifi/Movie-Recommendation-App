@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w9U-sc-QiU">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,7 +27,6 @@
                     <connections>
                         <segue destination="QlB-fQ-sBM" kind="relationship" relationship="viewControllers" id="GNR-re-bt9"/>
                         <segue destination="ZVg-IK-rc3" kind="relationship" relationship="viewControllers" id="MJA-Kv-i7c"/>
-                        <segue destination="mad-rG-g7u" kind="relationship" relationship="viewControllers" id="Yy4-p8-mWw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f20-g9-SFl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -130,46 +129,8 @@
             </objects>
             <point key="canvasLocation" x="164" y="-1075"/>
         </scene>
-        <!--Downloads-->
-        <scene sceneID="0aL-eI-OQp">
-            <objects>
-                <navigationController id="mad-rG-g7u" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Downloads" image="arrow.down.circle" catalog="system" id="xo8-OZ-CWA"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="518-c8-Etu">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cSv-D9-DLL">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="Ahc-Dj-oH2" kind="relationship" relationship="rootViewController" id="ov9-Eh-h3I"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="otR-rO-iKc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-689" y="-254"/>
-        </scene>
-        <!--Downloads-->
-        <scene sceneID="Vp0-NS-fXo">
-            <objects>
-                <viewController id="Ahc-Dj-oH2" customClass="DownloadsVC" customModule="MRMovieWithPagination" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="d5w-MS-DJZ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="3gU-Ut-dDn"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <color key="tintColor" red="1" green="0.1118151092" blue="0.10947177919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Downloads" largeTitleDisplayMode="always" id="BXl-7T-niX"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eIo-xY-UTO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="163" y="-254"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="arrow.down.circle" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="labelColor">
