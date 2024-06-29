@@ -72,6 +72,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeVC: MoviesListViewModelDelegate {
     func onFetchFailed(with reason: String) {
-        view.makeToast(reason)
+//        view.mmakeToast(reason)
     }
 }

@@ -74,8 +74,8 @@ extension SearchMoviesVC: UISearchResultsUpdating {
         }
         searchResultsViewModel.fetchSearchMovies(with: query) { movie in
             resultsController.movies = movie
+            resultsController.searchResultsCollectionView.reloadData()
         }
-        resultsController.searchResultsCollectionView.reloadData()
     }
 }
 
@@ -85,6 +85,5 @@ extension SearchMoviesVC: SearchViewModelDelegate, SearchResultsViewModelDelegat
     }
     
     func onFetchFailed(with reason: String) {
-        self.view.makeToast(reason)
     }
 }

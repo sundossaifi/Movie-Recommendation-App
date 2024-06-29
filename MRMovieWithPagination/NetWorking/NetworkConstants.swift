@@ -31,4 +31,10 @@ class NetworkConstants {
             return "https://image.tmdb.org/t/p/w300"
         }
     }
+    
+    public var youtubeAPIKey: String {
+        get {
+            return "AIzaSyBfG2yib0ydzskzY257gp8Z4dTy-CqWMoA"
+        }
+    }
 }
